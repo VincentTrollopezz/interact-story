@@ -16,13 +16,16 @@
        </select>
     </p>
 
-    <input type="button" value="Let's start your adventure!" 
-        onclick="storyPath()"/>
+    <input type="button" value="Let's start your adventure!" onclick="storyPath()"/>
 </head>
 <body>
-<Script>
+<script>
     function storyPath(){
-        
+        var $hero = document.getElementById("heroName").value;
+            $hero = capitalizeFirstLetter($hero);
+        if ( <option value="God">Adopted by God.</option>  === true){
+            var  textArray = ["It’s late December, and "+$hero]
+        }
 
     }
     
@@ -33,6 +36,6 @@
     
     
     
-</Script> 
+</script> 
 </body>
 </html>
