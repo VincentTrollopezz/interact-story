@@ -1,9 +1,13 @@
 body{
-    background-color: rgba(92, 176, 255, 0.377);
+    background-color: rgb(114, 137, 218);
+}
+
+h1{
+    color: #2C2F33;
 }
 
 p{
-    color: blue;
+    color: whitesmoke;
 }
 
 input{
