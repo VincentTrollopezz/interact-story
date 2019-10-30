@@ -4,50 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Jace Dang and Matthew Sickler</title>
-<head>
-    <h1>Filler Title</h1>
-</head>
-<body>
-
-<p>Hey there! Whats your adventurer name?</p>
-
-<!--<form> is the button(s) leading to the next part-->
-Type it in here:<br>
-
-    <form>
-    <input type="text" name="userName" id="hero">
-    </form>
-
-<!--Get the above FormInput to work with the function so the name is displayed correctly-->
-<!--Add some backstory here-->
-<p><strong>Backstory:</strong></p>
-
-
-<!--finish making the username button. using google docs picture.-->
-<script>
-    function heroName(){
-    const userName=document.getElementById("hero").value;
-    return userName;
-    }
-
-    const stor
-
-    let button=document.createElement('p');
+    <title>NoName
+        
+    </title>
+    
     
 
-</script>
-
-
-
-
-
-<!--The start of the adventure(path buttons)-->
-<p>Pick your start!<br> Heres some options to get you started:</p>
-
-</body>
-
-<!--Figure out how to feed user input back.
-(Collect here, use in a paragraph on the other files-->
-
-</html>
+    
+</head>
+<body>
+    <div class="container">
+        <p>What's your name? <input type = "text" id = "heroName"> </p>
+   <p>Choose your own path.
+       <input type="button" value="Adopted by God." onclick="God()"/>
+       <input type="button" value="Adopted by human." onclick="human()"/>
+       <input type="button" value="Adopted by monster." onclick="monster()"/>
+    </p>
+    </div>
+    <style>
+            *, *::before, *::after{
+        box-sizing: border-box;
+        font-family: italic;
+    }
+     
+    
+    body {
+        padding:0;
+        display:flex;
+        justify-content: center ;
+        align-items: center ;
+        width: 100vw;
+        height: 100vh;
+        background-color:black; 
+    }
+    
+    .container {
+        width: 800px;
+        max-width: 80%;
+        background-color: antiquewhite;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10 px;
+    }
+        </style> 
