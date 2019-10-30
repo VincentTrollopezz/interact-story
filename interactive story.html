@@ -4,70 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <title>Jace Dang and Matthew Sickler</title>
-
-    <p>What's your name? <input type = "text" id = "heroName"> </p>
-   <p>Choose your own path.
-       <select id = "storyPath">
-           <option value=""></option> 
-           <option value="God">Adopted by God.</option>
-           <option value="Human">Adopted by human.</option>
-           <option value="Monster">Adopted by monster.</option>
-       </select>
-    </p>
-
-    <input type="button" value="Let's start your adventure!" onclick="storyPath()"/>
+<head>
+    <h1>Filler Title</h1>
 </head>
 <body>
-    <div class="container">
-        <div id="text">Text</div>
-        <div id="option buttons" class ="btn-grid">
-            <button class= "btn">Option 1</button>
-            <button class= "btn">Option 2</button>
-            <button class= "btn">Option 3</button>
-        </div>
-    </div>
-    <style>
-            *, *::before, *::after{
-        box-sizing: border-box;
-        font-family: italic;
+
+<p>Hey there! Whats your adventurer name?</p>
+
+<!--<form> is the button(s) leading to the next part-->
+Type it in here:<br>
+
+    <form>
+    <input type="text" name="userName" id="hero">
+    </form>
+
+<!--Get the above FormInput to work with the function so the name is displayed correctly-->
+<!--Add some backstory here-->
+<p><strong>Backstory:</strong></p>
+
+
+<!--finish making the username button. using google docs picture.-->
+<script>
+    function heroName(){
+    const userName=document.getElementById("hero").value;
+    return userName;
     }
-     
-    
-    body {
-        padding:0;
-        display:flex;
-        justify-content: center ;
-        align-items: center ;
-        width: 100vw;
-        height: 100vh;
-        background-color: #7B68EE; 
-    }
-    
-    .container {
-        width: 800px;
-        max-width: 80%;
-        background-color: antiquewhite;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 10 px;
-    }
-        </style>    
 
+    const stor
+
+    let button=document.createElement('p');
     
 
-    
+</script>
 
 
-    
-    
-    
-    
-    
-    
-    
-    
- 
+
+
+
+<!--The start of the adventure(path buttons)-->
+<p>Pick your start!<br> Heres some options to get you started:</p>
+
 </body>
+
+<!--Figure out how to feed user input back.
+(Collect here, use in a paragraph on the other files-->
+
 </html>
