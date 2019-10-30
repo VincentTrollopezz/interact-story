@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Jace Dang and Matthew Sickler</title>
+
+    <p>What's your name? <input type = "text" id = "heroName"> </p>
+   <p>Choose your own path.
+       <select id = "storyPath">
+           <option value=""></option> 
+           <option value="God">Adopted by God.</option>
+           <option value="Human">Adopted by human.</option>
+           <option value="Monster">Adopted by monster.</option>
+       </select>
+    </p>
+
+    <input type="button" value="Let's start your adventure!" onclick="storyPath()"/>
+</head>
+<body>
+    <div class="container">
+        <div id="text">Text</div>
+        <div id="option buttons" class ="btn-grid">
+            <button class= "btn">Option 1</button>
+            <button class= "btn">Option 2</button>
+            <button class= "btn">Option 3</button>
+        </div>
+    </div>
+    <style>
+            *, *::before, *::after{
+        box-sizing: border-box;
+        font-family: italic;
+    }
+     
+    
+    body {
+        padding:0;
+        display:flex;
+        justify-content: center ;
+        align-items: center ;
+        width: 100vw;
+        height: 100vh;
+        background-color: #7B68EE; 
+    }
+    
+    .container {
+        width: 800px;
+        max-width: 80%;
+        background-color: antiquewhite;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10 px;
+    }
+        </style>    
+
+    
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+</body>
+</html>
