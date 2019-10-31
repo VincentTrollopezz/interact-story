@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container">
-       <textarea name="Welcome adventure, you are dead in your world, but you are not run out of luck yet, because you has been choosen to become our next he" id="" cols="30" rows="10"></textarea> <p>What's your name? <input type = "text" id = "heroName"> </p>
+       <p>What's your name? <input type = "text" id = "heroName"> </p>
    <p>Choose your own path.
        <input type="button" value="Adopted by God." onclick="God"/>
        <input type="button" value="Adopted by human." onclick="human"/>
@@ -51,9 +51,18 @@
         </style> 
     
     <script>
-        function start(){
-            
+        function makeButton(btnText, choice){
+            let button = document.createElement("button");
+            button.innerHTML = btnText;
+            buttonContainer.appendChild(button);
+            button.addEventListener ("click", function() {
+                history.push(choice);
+                showStory();
+            });
         }
+            
+            
+        
     
     
     
