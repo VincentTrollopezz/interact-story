@@ -6,68 +6,115 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <title>Jace Dang and Matthew Sickler</title>
-    <title>NoName
-        
-    </title>
-    
-    
-
-    
 </head>
 <body>
-    <div class="container">
-        <p>What's your name? <input type = "text" id = "heroName"> </p>
-   <p>Choose your own path.
-       
-    
-    <!--
-        <input type="button" value="Adopted by God." onclick="God()"/>
-        <input type="button" value="Adopted by human." onclick="human()"/>
-        <input type="button" value="Adopted by monster." onclick="monster()"/>
-   -->
-    </p>
+    <!--<div></div> defines a section of HTML.-->
+    <!--ID given for a reference-->
+    <!--Will hold the story-->
+    <div id="theStory">
+
     </div>
-    <style>
-            *, *::before, *::after{
-        box-sizing: border-box;
-        font-family: italic;
+    <!--Will hold all of our buttons-->
+    <div id="buttons">
+
+    </div>
+    
+    <!--JavaScript to make things run-->
+    <script>
+    //Container for the story so we can keep track of it
+
+    let storyTracker=document.getElementById("theStory");
+    
+    //Container for keeping track of our buttons
+
+    let buttonTracker=document.getElementById("buttons");
+    
+    //Container to keep track of what our story is/has been so far
+
+    let pastStory=["start"];
+
+    //Constant to be referecnced when we need a certain part of the story. Uses arrays to have sub sections
+
+    const story={
+        start:{
+            text:"JACE MAKE AN INTRO",
+            choices:[
+                ["Get adopted by God", "god"],
+                ["Get adopted by a human", "human"],
+                ["Get adopted by a monster", "monster"]
+            ]
+        },
+        god:{
+            text:"Am god. Hallo.",
+            choices:[]
+        },
+        human:{
+            text:"The humans finds you favorable",
+            choices:[]
+        },
+        monster:{
+            text:"The monsters choose not to eat you alive...yet...",
+            choices:[]
+        }
+}
+    
+//Function to create the story
+function createStory(text){
+    //Makes a paragraph to have the story go in
+    let storyText=document.createElement("p");
+    //Adds text to the newly created paragraph
+    storyText.innerText=text;
+    //Attaches to the storyTracker so it can use eachother
+    storyTracker.appendChild(storyText);
+}
+
+//Function to display the story
+
+function displayMyStory(){
+    //Sets to last array index number
+    let chunk=pastStory[pastStory.length -1]; 
+    //Reset html apparently
+    storyTracker.innerHTML="";
+    //Same thing but for the buttons
+    buttonTracker.innerHTML="";
+    //For loop to make the story build
+    for(let page of pastStory){
+        createStory(story[page].text);
     }
-     
-    
-    body {
-        padding:0;
-        display:flex;
-        justify-content: center ;
-        align-items: center ;
-        width: 100vw;
-        height: 100vh;
-        background-color:black; 
-    }
-    
-    .container {
-        width: 800px;
-        max-width: 80%;
-        background-color: antiquewhite;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 10 px;
-    }
-        </style> 
-        </script>
+    //For loop adds the correct buttons
+    for(let choice of story[chunk].choices){
+        createButton(choice[0], choice[1])
+    }    
 
-    
+}
 
-    
+//Function to shorthand button creation
 
-
+function createButton(booto, choice){
+    //Make button
+    let button=document.createElement("button");
+    //Change button text
+    button.innerHTML=booto;
+    //Make button work with tracker
+    buttonTracker.appendChild(button);
+    //Makes button do thing when click
+    button.addEventListener("click", function(){
+        //Inserts into the pastStory array
+        pastStory.push(choice);
+        //Calls displayMyStory so we can see the new updated story
+        displayMyStory();
+    });
+}
+    
+    
+displayMyStory();    
     
     
     
     
     
+    </script>
     
     
-    
- 
-        </body>
-        </html>
+</body>
+</html>
