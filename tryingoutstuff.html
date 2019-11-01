@@ -13,8 +13,16 @@
 <button onclick="getName()" id="buutoo">Let's Start!</button>
 
     <script>
+
+    var usrName = ""
+
+
     function getName(){
-        var str=document.getElementById("adventurer").value;
+        var str = document.getElementById("adventurer").value;
+        usrName = str;
+        console.log(usrName);
+        displayMyStory();
+
     }
     </script>
 
@@ -51,7 +59,7 @@
         storyTracker.innerHTML="";
         buttonTracker.innerHTML="";
         for(let page of pastStory){
-            createStory(story[page].text);
+            createStory(story[page].text());
         }
         for(let choice of story[chunk].choices){
             createButton(choice[0], choice[1])
@@ -72,9 +80,9 @@
 
                                         /*The actually story writing and choice options*/
 
-    const story={
-        start:{
-            text:"JACE MAKE AN INTRO",
+    const story = {
+        start : {
+            text : function(){ return usrName + " make an intro"},
             choices:[
                 ["Get the monz","monz"],
                 ["Get no monz", "broke"],
@@ -96,12 +104,6 @@
             choices:[]
         }
     }   
-
-
-
-
-
-displayMyStory();
 </script>
 
 
