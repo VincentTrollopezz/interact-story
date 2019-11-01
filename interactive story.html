@@ -16,12 +16,7 @@
 </head>
 <body>
     <div class="container">
-       <p>What's your name? <input type = "text" id = "heroName"> </p>
-   <p>Choose your own path.
-       <input type="button" value="Adopted by God." onclick="God"/>
-       <input type="button" value="Adopted by human." onclick="human"/>
-       <input type="button" value="Adopted by monster." onclick="monster"/>
-    </p>
+        
     </div>
     <style>
             *, *::before, *::after{
@@ -49,26 +44,82 @@
         box-shadow: 0 0 10 px;
     }
         </style> 
-    
-    <script>
-        function makeButton(btnText, choice){
-            let button = document.createElement("button");
-            button.innerHTML = btnText;
-            buttonContainer.appendChild(button);
-            button.addEventListener ("click", function() {
-                history.push(choice);
-                showStory();
-            });
-        }
-            
-            
+        <script>    
+            //creates story
         
+        
+            let storyTracker=document.getElementById("theStory");
+        
+            let buttonTracker=document.getElementById("buttons");
+            
+            let pastStory=["start"];
+        
+            function createStory(text){
+                let storyText=document.createElement("p");
+                storyText.innerText=text;
+                storyTracker.appendChild(storyText);
+            }
+            //Displays story on screen
+        
+            function displayMyStory(){
+                let chunk=pastStory[pastStory.length -1];
+                storyTracker.innerHTML="";
+                buttonTracker.innerHTML="";
+                for(let page of pastStory){
+                    createStory(story[page].text);
+                }
+                for(let choice of story[chunk].choices){
+                    createButton(choice[0], choice[1])
+                }
+            }
+            //Shorthand buttonCreation
+        
+            function createButton(booto, choice){
+                let button=document.createElement("button");
+                button.innerHTML=booto;
+                buttonTracker.appendChild(button);
+                button.addEventListener("click", function(){
+                    pastStory.push(choice);
+                    displayMyStory();
+                });
+            }
+            //Run everything on the page
+        
+                                                /*The actually story writing and choice options*/
+        
+            const story={
+                start:{
+                    text:"JACE MAKE AN INTRO",
+                    choices:[
+                        ["Get the monz","monz"],
+                        ["Get no monz", "broke"],
+                        ["Get all the monz", "all"]
+                    ]
+                },
+                monz:{
+                    text:"Hooraw",
+                    choices:[]
+                },
+                broke:{
+                    text:"am broke",
+                    choices:[
+                        ["bruh"]
+                    ]
+                },
+                all:{
+                    text:"AM RICH",
+                    choices:[]
+                }
+            }   
+        
+        
+        
+        
+        
+        displayMyStory();
+        </script>
     
     
-    
-    
-    </script>
-
     
 
 </body>
