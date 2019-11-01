@@ -4,9 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Jace Dang and Matthew Sickler</title>
+    <title>NoName
+        
+    </title>
+    
+    
+
+    
 </head>
 <body>
+    <div class="container">
+       <p>What's your name? <input type = "text" id = "heroName"> </p>
+   <p>Choose your own path.
+       <input type="button" value="Adopted by God." onclick="God"/>
+       <input type="button" value="Adopted by human." onclick="human"/>
+       <input type="button" value="Adopted by monster." onclick="monster"/>
+    </p>
+    </div>
+    <style>
+            *, *::before, *::after{
+        box-sizing: border-box;
+        font-family: italic;
+    }
+     
     
+    body {
+        padding:0;
+        display:flex;
+        justify-content: center ;
+        align-items: center ;
+        width: 100vw;
+        height: 100vh;
+        background-color:black; 
+    }
+    
+    .container {
+        width: 800px;
+        max-width: fit-content;
+        background-color: antiquewhite;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10 px;
+    }
+        </style> 
+    
+    <script>
+        function makeButton(btnText, choice){
+            let button = document.createElement("button");
+            button.innerHTML = btnText;
+            buttonContainer.appendChild(button);
+            button.addEventListener ("click", function() {
+                history.push(choice);
+                showStory();
+            });
+        }
+            
+            
+        
+    
+    
+    
+    
+    </script>
+
+    
+
 </body>
 </html>
