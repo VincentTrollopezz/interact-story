@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="theme.css">
     <title>Jace Dang and Matthew Sickler</title>
 </head>
 <body>
+<!--Reference for textFeildInput: https://www.youtube.com/watch?v=lThuZY0-S_8 -->
+
+<input id="adventurer" placeholder="Enter your desired name">
+<button onclick="getName()" id="buutoo">Let's Start!</button>
+
+    <script>
+
+    var usrName = ""
+
+
+    function getName(){
+        var str = document.getElementById("adventurer").value;
+        usrName = str;
+        console.log(usrName);
+        displayMyStory();
+
+    }
+    </script>
+
+
                                         <!--Code for the story to work-->
     <!--Container for the story-->
     <div id="theStory">
@@ -39,7 +60,7 @@
         storyTracker.innerHTML="";
         buttonTracker.innerHTML="";
         for(let page of pastStory){
-            createStory(story[page].text);
+            createStory(story[page].text());
         }
         for(let choice of story[chunk].choices){
             createButton(choice[0], choice[1])
@@ -60,9 +81,9 @@
 
                                         /*The actually story writing and choice options*/
 
-    const story={
-        start:{
-            text:"JACE MAKE AN INTRO",
+    const story = {
+        start : {
+            text : function(){ return usrName + " make an intro"},
             choices:[
                 ["Get the monz","monz"],
                 ["Get no monz", "broke"],
@@ -84,12 +105,6 @@
             choices:[]
         }
     }   
-
-
-
-
-
-displayMyStory();
 </script>
 
 
