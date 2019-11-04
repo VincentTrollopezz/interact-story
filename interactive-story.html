@@ -37,6 +37,9 @@
     <div id="buttons">
 
     </div>
+    <div class="container"> <p>Damon</p>
+
+    </div>
 
     <script>    
     //creates story
@@ -126,17 +129,40 @@
             ]
         },
         noErzan:{
-            text : function (){return ""},
+            text : function (){return "Stay home with Erzan. Unfortunately, your monster village get raided by a human army, Marco is a leader. Because you are well loved in the village, all the monsters try to save you by sacrificing themselves. You escape, but you are the only one survive. Calm down your anger, you try to hide from the searching party, Marco dispatched to find you. You find a shelter, but there is an old man in it, reluctantly you stay with him. He starts a conversation with you, you try to ignore him, suddenly he mentions about your parents. He says that he knows who you parents are. You can’t trust him yet, so you ask more questions about your life, even your deepest secret. How suprise, he get all the answers right. You ask him about your parents, he says, \"Your parents were killed by God because they crossed the line that God forbid.\" You angry." 
+},
             choices :[
-                [],
-                []
+                ["Ask old man to be your trainer."],
+                ["Thanks for the information and leave."]
             ]
         },
         moveOut:{
-            text : function (){return ""},
+            text : function (){return "You move out, on your adventure, the only question that keeps going around in your head is why human and monster have such a barrier. You try to find the question. On your way, you meet an old man, he told you to go west and meet a guy named Zillian, he will give you the answer. You listen to him and go west. After 3 days of walking, you see a guy with a noble suit, at first you didn’t think he is Zillian, you ask" + "\n" + 
+"-Are you Zillian ?" + "\n" +
+"He says." + "\n" +
+"-I am, and you are ?" + "\n" +
+"-" + usrName +", I heard someone say that you can answer my question." + "\n" +
+"Zillian says" + "\n" +
+"-And your question is ?" + "\n" +
+"You say." + "\n" +
+"-Can humans and monsters live together ?" + "\n" + 
+"-They can, but not all monsters are the same." + "\n" +
+"You ask" + "\n" +
+"-What do you mean by that ?" + "\n" + 
+"-There is a long story behind this, would you want to know?" + "\n" + 
+"You say." + "\n" +
+"-Yes" + "\n" +
+"-Once upon a time, a long time ago, monsters and humans are friends. But unfortunately the New God created another kind of monster, the evil one, this new kind attacks everything it sees without mercy, because the new kind looks like the old kind, so humans misunderstand that monsters try to take advantage over humans, little does god know humans still have faith in monsters, they wondered about the relation with monsters. Monsters and humans just need someone who is brave enough to stand out to reconcile their relationship." + "\n" +
+"-hm..." + "\n" + 
+"You hestiage for a moment and say." + "\n" + 
+"-I will be that guy, I want humans and monsters to be friends again. Zillian, I don’t know who you are but it would be nice if I have someone who knows a lot about this world like you next to. Would you like to help me fix this relationship ?" + "\n" +
+"-Yes. It’s my pleasure to help you." + "\n" + 
+"You get an achievement, first friend in the adventure. Zillian will be the strongest help if you need him." + "\n" + 
+"You and Zillian find way, make friends with everyone in your way. As far as you go, everyone loves you. On your way, you heard the rumor about the temple,that can make your wish come true." 
+}, 
             choices :[
-                [],
-                []
+                ["Find more about this temple.","smart"],
+                ["Go straight to the temple.","stupid" ]
             ]
         },
         learnMagic :{
@@ -160,6 +186,7 @@
                 []
             ]
         },
+        smart
     }   
 </script>
 
