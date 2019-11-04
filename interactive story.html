@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jace Dang and Matthew Sickler</title>
+<head>
+    <link rel="stylesheet" href="decorations.css">
+</head>
+<body>
+
+<p>Hey there! Whats your adventurer name?</p>
+
+<!--<form> is the button(s) leading to the next part-->
+Type it in here:<br>
+
+    <form>
+    <input type="text" name="userName" id="hero">
+    </form>
+
+<!--Get the above FormInput to work with the function so the name is displayed correctly-->
+<!--Add some backstory here-->
+<p><strong>Backstory:</strong></p>
+
+<script>
+    function herosName(){
+        const userName=document.getElementById('hero'.value);
+    
+        document.write("A Demon Lord and princess met and fell in love, something which was forbidden by God."+ 
+    "<br>"+"God knowing this happened, went and killed the two."+"<br>"+
+    "Leaving just you,"+ userName +",undiscovered and alive.");
+    }
+    herosName()
+
+    
+</script>
+
+
+
+
+
+<!--The start of the adventure(path buttons)-->
+<p>Pick your start!<br> Heres some options to get you started:</p>
+<form>
+    <input type="button" value="Get adopted by God."
+onclick="window.location.href='path1/path1.html'"/>
+</form>
+<br>
+<input type="button" value="Get adopted by a human."
+onclick="window.location.href='path2/path2.html'"/>
+</form>
+
+<br>
+<br>
+
+<input type="button" value="Get adopted by a monster."
+onclick="window.location.href='path3/path3.html'"/>
+</form>
+
+
+
+</body>
+
+<!--Figure out how to feed user input back.
+(Collect here, use in a paragraph on the other files-->
+
+</html>
