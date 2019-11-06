@@ -12,20 +12,28 @@ button{
     padding:3px 15px;
 }
 
+
 p{
+<<<<<<< HEAD
     color:whitesmoke
+=======
+    color: whitesmoke;
+    font-size: 25px ;
+>>>>>>> 14d0de7a51ee79bcf9290e84e9df725fc81eb139
 }
 
 .container{
-    display: -webkit-flexbox;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    
     display: flex;
     -webkit-flex-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
     justify-content: center;
+    color: red;
+    font-size: 75px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 

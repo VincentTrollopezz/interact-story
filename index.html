@@ -10,6 +10,10 @@
 <body>
 <!--Reference for textFeildInput: https://www.youtube.com/watch?v=lThuZY0-S_8 -->
 
+<div class="container"> Dämon
+    
+
+</div> 
 <input id="adventurer" placeholder="Enter your desired name">
 <button onclick="getName()" id="buutoo">Let's Start!</button>
 
@@ -40,11 +44,15 @@
     <style>
     </style>
     <div class="container"> <p>Damon</p>
+    
 
-    </div>
+    
+    
 
     <script>    
     //creates story
+    
+    
 
 
     let storyTracker=document.getElementById("theStory");
@@ -88,7 +96,8 @@
 
     const story = {
         start : {
-            text : function(){ return "You were born 2 days ago, and your parents threw you away. Welp not a good start for a future adventurer like you. But you can choose to get adopt by who you want. Think clearly and good luck " + usrName},
+            text : function(){ return "You’ve been hit by a truck, but somehow your soul transfer through the 10th dimension, into a baby’s body. Your name is" + usrName + ". This baby is abandoned and left at nowhere. In this world, people could use Charma to use magic, magic is divided into two categories, white magic, and elements magic. White magic is magic like teleport, buff strength, healing, etc. Elements magic are fire, water, earth, metal, wood. People will be born with either white magic or elements magic. Only a small percent of people will be born with two or more elements. You have archived main character arua and you were born with white magic."
+},
             choices:[
                 ["Adopted by monster","mons"],
                 ["Adopted by human", "human"],
@@ -127,15 +136,15 @@
             text : function (){return "You go hunting with Erzan, in the trip you meet Marco. A powerful knight who’s looking for his master as the family will. Coincidence, you are his master. Would you like to take him as your servant ? Remember, Marco has his own army, which can be helpful in the future."},
             choices :[
                 ["take Marco","getSlave"],
-                ["don’t take Marco."]
+                ["don’t take Marco.","lostSlave"]
             ]
         },
         noErzan:{
             text : function (){return "Stay home with Erzan. Unfortunately, your monster village get raided by a human army, Marco is a leader. Because you are well loved in the village, all the monsters try to save you by sacrificing themselves. You escape, but you are the only one survive. Calm down your anger, you try to hide from the searching party, Marco dispatched to find you. You find a shelter, but there is an old man in it, reluctantly you stay with him. He starts a conversation with you, you try to ignore him, suddenly he mentions about your parents. He says that he knows who you parents are. You can’t trust him yet, so you ask more questions about your life, even your deepest secret. How suprise, he get all the answers right. You ask him about your parents, he says, \"Your parents were killed by God because they crossed the line that God forbid.\" You angry." 
 },
             choices :[
-                ["Ask old man to be your trainer."],
-                ["Thanks for the information and leave."]
+                ["Ask old man to be your trainer.","respect"],
+                ["Thanks for the information and leave.","notGood"]
             ]
         },
         moveOut:{
@@ -168,26 +177,163 @@
             ]
         },
         learnMagic :{
-            text : function (){return ""},
+            text : function (){return "You stay home with Elora."},
             choices :[
-                [],
-                []
+                ["Take quest","Eloradies"],
+                ["Don't take quest","Eloralives"]
             ]
+        },
+        Eloradies:{
+            text : function (){return "Angry"},
+            choices :[
+                ["Kill villagers","becomeEvil"],
+                ["Leave the village","sad"]
+            ]
+
+        },
+        becomeEvil:{
+            text : function (){return "Find and learn about dark magic"},
+            choices :[
+                ["Sacrifice yourself to revival Elora","end1"],
+                ["Use dark magic to create chaos","makeHumanDisappearforever"]
+            ]
+
+        },
+        makeHumanDisappearforever:{//end
+            text : function (){return "Create chaos, kill all humans, God tries to stop you but he failed, you kill God. Realize that Elora can't come back to live. You live in the jungle and avoid everyone and everything till you die alone." + "\n" +  "\n" + "Thank you for staying with us over the story."},
+            
+        },
+        end1:{ //end
+            text : function (){return "Elora comes back to life, she finds out that you sacrifice yourself to save her. She cries." + "\n" +  "\n" + "Thank you for staying with us over the story."}
+        },
+
+        sad:{
+            text : function (){return "Heard about the temple that can make your wish come true"},
+            choices :[
+                ["Find more about this temple","smart2"],
+                ["Go straight to the temple.","stupid2"]
+            ]
+
+        },
+        smart2:{
+            text : function (){return "Find out that there are traps, posions, and danger factors in this temple."},
+            choices :[
+                ["Get ready","youlive"],
+                ["Don't get ready","youdie"]
+            ]
+        },
+        youlive:{
+            text : function (){return "You avoid all the dangers in your way, get into the deepest part of the temple. Your wish is "},
+            choices :[
+                ["Elora can come back to live.","happyEnd"],
+                ["Mcdonald happy meal","dumb"]
+            ]
+        },
+        dumb:{ //end
+            text : function (){return "Because your wish is stupid, you die." + "\n" +  "\n" + "Thank you for staying with us over the story."},
+            
+        },
+        happyEnd:{ //end
+            text : function (){return "Elora comes back to live. She sees you, she knows you tried so hard to bring her back to life. You live happily ever after." + "\n" +  "\n" + "Thank you for staying with us over the story."},
+        },
+        Eloralives:{
+            text : function (){return "Find out about the villages's plan. They try to get you this quest, so Elora will be home alone, they will kil her."},
+            choices :[
+                ["Angry, but still remember about 18 years live in the village. Leave the village","gowithElora"],
+                ["Angry, pretend to left.","burnthevillage"]
+            ]
+        },
+        burnthevillage:{ //end
+            text : function (){return "You go back, set the village on fire. Feel happy about it, curious and take a bite of one burned human's meat. Feel good, kill more human and eat them, cooked. Become a myth to scared the butt out of the kids." + "\n" +  "\n" + "Thank you for staying with us over the story." },
+            
+        },
+        gowithElora:{ //end 
+            text : function (){return "You grow old with Elora, find a wife, have friends, a new place where everyone accept a witch and a half human half monster like you. Live happily ever after" + "\n" +  "\n" + "Thank you for tsaying with us over the story."},
         },
         helpMarco :{
+            text : function (){return "Help Marco to raid the monster village, feel good about killing"},
+            choices :[
+                ["Ask Marco to join more raids","deathEnd"],
+                ["Go by yourself, kill more monsters, become monster hunter.","deathEnd"]
+            ]
+        },
+        deathEnd:{ //end
+            text : function (){return "Once time when you rush in a monster cave without premission, the monster outnumbered you, they kill you and eat you like a delicious desert." + "\n" +  "\n" + "Thank you for staying with us over the story." },
+            
+        },
+        whoCaresAboutMarco:{
+            text : function (){return "You don't wanna work, you feel like going out. An old man sits under a tree"},
+            choices :[
+                ["Start a converstation with him","knowTheFuture"],
+                ["Ignore him","WontGetInformation"]
+            ]
+        },
+        WontGetInformation:{
+            text : function (){return "When you walk away, he says one thing that you can't ignore him anymore."},
+            choices :[
+                ["Ask him to be your trainner","firstchallenge"],
+                ["Thanks for the information, find way to "]
+            ] 
+        },
+        knowTheFuture:{
             text : function (){return ""},
             choices :[
                 [],
                 []
             ]
         },
-        whoCaresAboutMarco:{
+        smart:{
             text : function (){return ""},
             choices :[
                 [],
                 []
             ]
+        },
+        stupid:{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+        },
+        notGood:{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+        },
+        respect:{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+        },
+        getSlave:{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+
+        },
+        lostSlave:{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+<<<<<<< HEAD:index.html
         }
+=======
+        },
+
+
+        
+
+        
+>>>>>>> 14d0de7a51ee79bcf9290e84e9df725fc81eb139:interactive-story.html
     }   
 </script>
 
