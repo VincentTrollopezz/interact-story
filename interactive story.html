@@ -4,9 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="theme.css">
     <title>Jace Dang and Matthew Sickler</title>
 </head>
 <body>
+<!--Reference for textFeildInput: https://www.youtube.com/watch?v=lThuZY0-S_8 -->
+
+<div class="container"> Dämon
     
+
+</div> 
+<input id="adventurer" placeholder="Enter your desired name">
+<button onclick="getName()" id="buutoo">Let's Start!</button>
+
+    <script>
+
+    var usrName = ""
+
+
+    function getName(){
+        var str = document.getElementById("adventurer").value;
+        usrName = str;
+        console.log(usrName);
+        displayMyStory();
+
+    }
+    </script>
+
+
+                                        <!--Code for the story to work-->
+    <!--Container for the story-->
+    <div id="theStory">
+
+    </div>
+    <!--Container for the buttons-->
+    <div id="buttons">
+
+    </div>
+    
+
+    
+    
+
+    <script>    
+    //creates story
+    
+    
+
+
+    let storyTracker=document.getElementById("theStory");
+
+    let buttonTracker=document.getElementById("buttons");
+    
+    let pastStory=["start"];
+
+    function createStory(text){
+        let storyText=document.createElement("p");
+        storyText.innerText=text;
+        storyTracker.appendChild(storyText);
+    }
+    //Displays story on screen
+
+    function displayMyStory(){
+        let chunk=pastStory[pastStory.length -1];
+        storyTracker.innerHTML="";
+        buttonTracker.innerHTML="";
+        for(let page of pastStory){
+            createStory(story[page].text());
+        }
+        for(let choice of story[chunk].choices){
+            createButton(choice[0], choice[1])
+        }
+    }
+    //Shorthand buttonCreation
+
+    function createButton(booto, choice){
+        let button=document.createElement("button");
+        button.innerHTML=booto;
+        buttonTracker.appendChild(button);
+        button.addEventListener("click", function(){
+            pastStory.push(choice);
+            displayMyStory();
+        });
+    }
+    //Run everything on the page
+
+                                        /*The actually story writing and choice options*/
+
+    const story = {
+        start : {
+            text : function(){ return "You were born 2 days ago, and your parents threw you away. Welp not a good start for a future adventurer like you. But you can choose to get adopt by who you want. Think clearly and good luck " + usrName},
+            choices:[
+                ["Adopted by monster","mons"],
+                ["Adopted by human", "human"],
+                ["Adopted by God", "God"]
+            ]
+        },
+        mons:{
+            text : function(){return "You have been adopted by a monster, his name is Erzan, a nice monster. Every monster in the village seems to like you, they raise you well enough for you to know all about survival and hunting skills. As time go toward, you are 18. Today is your birthday, Erzan intends to ask you to go on a hunting trip with him."} ,
+            choices:[
+                ["Go with Erzan","yesErzan"],
+                ["Ask Erzan to stay home and enjoy your birthday party.","noErzan"]
+            ]
+        },
+        human:{
+            text : function(){return " \"Who putted this basket right here ?\", a woman\'s voice said." + "\n" +
+' "Wh-wh-what! A baby ? I always wonder why humans can be this cruel to abandon their child" ' + "sign, she picks up the basket and say," + ' "Lucky you little brat that I found you, I think we will have a good time together" ' + "\n"  +
+"You have been adopted by a woman named Elora, she is a witch, who wish to have a peaceful life among the humans. You spent 18 years with her, and today is your 18th birthday. You wonder how big is the world outside the village you live in."
+},
+            choices:[
+                ["Ask Elora to move out and go on an adventure by yourself.","moveOut"],
+                ["Feel insecure, stay home and ask Elora to teach you more about magic.","learnMagic"]
+            ]
+        },
+        God:{
+            text : function (){return "You see a guy’re holding a thunder in his hand, on the other hand you see him holding something round, water dropping down, but you still a baby, so you don’t have any question, and you will forget this soon." + "\n" + 
+"God says." + "\n" +
+"-Hm, so this tiny living creature is the result of crossed my forbid line? How fun it will be if I adopt this thing and raise him as my tool, this thing might be useful in the future." + "\n" +
+"You have been adopted by God, the ruler of the world. You live a wealthy life, with friends, family, and everyone loves you. God teaches you how to harness your hidden power. You could use 30% of that power. Don’t underestimate 30%, compared to God, your 30% is equal to 5% of God. Today is your 18th birthday, God asks you if you want to help Marco, a believer, to raid a monster’s village, and prevent the dangers could come to humans." 
+},
+            choices:[
+                ["You accept the quest and raid the village with Marco.","helpMarco"],
+                ["You have plan with your friends, so you don’t go with Marco.","whoCaresAboutMarco"]
+            ]
+        },
+        yesErzan: {
+            text : function (){return "You go hunting with Erzan, in the trip you meet Marco. A powerful knight who’s looking for his master as the family will. Coincidence, you are his master. Would you like to take him as your servant ? Remember, Marco has his own army, which can be helpful in the future."},
+            choices :[
+                ["take Marco","getSlave"],
+                ["don’t take Marco."]
+            ]
+        },
+        noErzan:{
+            text : function (){return "Stay home with Erzan. Unfortunately, your monster village get raided by a human army, Marco is a leader. Because you are well loved in the village, all the monsters try to save you by sacrificing themselves. You escape, but you are the only one survive. Calm down your anger, you try to hide from the searching party, Marco dispatched to find you. You find a shelter, but there is an old man in it, reluctantly you stay with him. He starts a conversation with you, you try to ignore him, suddenly he mentions about your parents. He says that he knows who you parents are. You can’t trust him yet, so you ask more questions about your life, even your deepest secret. How suprise, he get all the answers right. You ask him about your parents, he says, \"Your parents were killed by God because they crossed the line that God forbid.\" You angry." 
+},
+            choices :[
+                ["Ask old man to be your trainer."],
+                ["Thanks for the information and leave."]
+            ]
+        },
+        moveOut:{
+            text : function (){return "You move out, on your adventure, the only question that keeps going around in your head is why human and monster have such a barrier. You try to find the question. On your way, you meet an old man, he told you to go west and meet a guy named Zillian, he will give you the answer. You listen to him and go west. After 3 days of walking, you see a guy with a noble suit, at first you didn’t think he is Zillian, you ask" + "\n" + 
+"-Are you Zillian ?" + "\n" +
+"He says." + "\n" +
+"-I am, and you are ?" + "\n" +
+"-" + usrName +", I heard someone say that you can answer my question." + "\n" +
+"Zillian says" + "\n" +
+"-And your question is ?" + "\n" +
+"You say." + "\n" +
+"-Can humans and monsters live together ?" + "\n" + 
+"-They can, but not all monsters are the same." + "\n" +
+"You ask" + "\n" +
+"-What do you mean by that ?" + "\n" + 
+"-There is a long story behind this, would you want to know?" + "\n" + 
+"You say." + "\n" +
+"-Yes" + "\n" +
+"-Once upon a time, a long time ago, monsters and humans are friends. But unfortunately the New God created another kind of monster, the evil one, this new kind attacks everything it sees without mercy, because the new kind looks like the old kind, so humans misunderstand that monsters try to take advantage over humans, little does god know humans still have faith in monsters, they wondered about the relation with monsters. Monsters and humans just need someone who is brave enough to stand out to reconcile their relationship." + "\n" +
+"-hm..." + "\n" + 
+"You hestiage for a moment and say." + "\n" + 
+"-I will be that guy, I want humans and monsters to be friends again. Zillian, I don’t know who you are but it would be nice if I have someone who knows a lot about this world like you next to. Would you like to help me fix this relationship ?" + "\n" +
+"-Yes. It’s my pleasure to help you." + "\n" + 
+"You get an achievement, first friend in the adventure. Zillian will be the strongest help if you need him." + "\n" + 
+"You and Zillian find way, make friends with everyone in your way. As far as you go, everyone loves you. On your way, you heard the rumor about the temple,that can make your wish come true." 
+}, 
+            choices :[
+                ["Find more about this temple.","smart"],
+                ["Go straight to the temple.","stupid" ]
+            ]
+        },
+        learnMagic :{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+        },
+        helpMarco :{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+        },
+        whoCaresAboutMarco:{
+            text : function (){return ""},
+            choices :[
+                [],
+                []
+            ]
+        }
+        
+    }   
+</script>
+
+
 </body>
 </html>
