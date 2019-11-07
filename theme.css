@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(136, 135, 135);
+    background-color: white;
 }
 
 
@@ -14,12 +14,12 @@ button{
 
 
 p{
-    color: whitesmoke;
+    color: black;
     font-size: 25px ;
 }
 
 .container{
-    
+    background-color: white;
     display: flex;
     -webkit-flex-align: center;
     -ms-flex-align: center;
