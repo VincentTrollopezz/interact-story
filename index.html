@@ -10,10 +10,11 @@
 <body>
 <!--Reference for textFeildInput: https://www.youtube.com/watch?v=lThuZY0-S_8 -->
 
-<div class="container"> Dämon
+<div class="container"> 
     
 
 </div> 
+
 <input id="adventurer" placeholder="Enter your desired name">
 <button onclick="getName()" id="buutoo">Let's Start!</button>
 
@@ -93,7 +94,7 @@
 
     const story = {
         start : {
-            text : function(){ return "You’ve been hit by a truck, but somehow your soul transfer through the 10th dimension, into a baby’s body. Your name is" + usrName + ". This baby is abandoned and left at nowhere. In this world, people could use Charma to use magic, magic is divided into two categories, white magic, and elements magic. White magic is magic like teleport, buff strength, healing, etc. Elements magic are fire, water, earth, metal, wood. People will be born with either white magic or elements magic. Only a small percent of people will be born with two or more elements. You have archived main character arua and you were born with white magic."
+            text : function(){ return "You’ve been hit by a truck, but somehow your soul transfer through the 10th dimension, into a baby’s body. Your name is " + usrName + ". This baby is abandoned and left at nowhere. In this world, people could use Charma to use magic, magic is divided into two categories, white magic, and elements magic. White magic is magic like teleport, buff strength, healing, etc. Elements magic are fire, water, earth, metal, wood. People will be born with either white magic or elements magic. Only a small percent of people will be born with two or more elements. You have archived main character arua and you were born with white magic."
 },
             choices:[
                 ["Adopted by monster","mons"],
@@ -174,14 +175,14 @@
             ]
         },
         learnMagic :{
-            text : function (){return "You stay home with Elora."},
+            text : function (){return "You stay home with Elora. Learn more about magic, as you learn, you realize how powerful your white magic is. You can cancel other magic if you can see its flaws fast enough. One day, you try to fix the flaws, accidentally, you make the magic gain stronger. The villagers know, they ask you if you can help them to protect them village. Around this time, don’t know why but the village seems to be the only target of the monster’s , a lot of people were killed and sacrificed themselves to kill as many monsters as they could. You feels that you need to do something in return for those years you lived in the village. You use your magic to fight against the raids, and teach villagers who you see they could do something. One day, the village's chief give you a mission which requires leaving the village for a month. Something seems odd."},
             choices :[
                 ["Take quest","Eloradies"],
                 ["Don't take quest","Eloralives"]
             ]
         },
         Eloradies:{
-            text : function (){return "Angry"},
+            text : function (){return "You take the quest and head out to do your mission. When you come back, everyone say that Elora is gone, she said she needs to do something and it's emergency. You believe them. As time goes by, It'd been a year since Elora's gone. You accidetally hear the villagers say that they feel so good for killed Elora. You can't believe that you heard, you appear and ask them. They conf  "},
             choices :[
                 ["Kill villagers","becomeEvil"],
                 ["Leave the village","sad"]
@@ -266,11 +267,18 @@
             ]
         },
         WontGetInformation:{
-            text : function (){return "When you walk away, he says one thing that you can't ignore him anymore."},
+            text : function (){return "When you walk away, he says one thing that you can't ignore him anymore. You ask if what old man said is real. He c "},
             choices :[
                 ["Ask him to be your trainner","firstchallenge"],
-                ["Thanks for the information, find way to "]
+                ["Thanks for the information and leave." , "findwaytodefeatGodurself"]
             ] 
+        },
+        findwaytodefeatGodurself:{
+            text : function (){return "After you know that your parents were killed by God, a guy you thought "},
+            choices :[
+                ["Do whatever it takes to get power"],
+                []
+            ]
         },
         knowTheFuture:{
             text : function (){return ""},
@@ -308,10 +316,10 @@
             ]
         },
         getSlave:{
-            text : function (){return ""},
+            text : function (){return "You accept Marco as a servant, but you still not trust him yet. All of the sudden, he asks if you know about the temple that makes your wish come true."},
             choices :[
-                [],
-                []
+                ["Go to the temple",],
+                ["Don't go",""]
             ]
 
         },
