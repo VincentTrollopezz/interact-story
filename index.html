@@ -1,3 +1,9 @@
+
+	
+
+ 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,63 +15,63 @@
 </head>
 <body>
 <!--Reference for textFeildInput: https://www.youtube.com/watch?v=lThuZY0-S_8 -->
-
+ 
 <div class="container"> <img src="damon.png">
     
-
+ 
 </div> 
-
+ 
 <input id="adventurer" placeholder="Enter your desired name">
 <button onclick="getName()" id="buutoo">Let's Start!</button>
-
+ 
     <script>
-
+ 
     var usrName = ""
-
-
+ 
+ 
     function getName(){
         var str = document.getElementById("adventurer").value;
         usrName = str;
         console.log(usrName);
         displayMyStory();
-
+ 
     }
     </script>
-
-
+ 
+ 
                                         <!--Code for the story to work-->
     <!--Container for the story-->
     <div id="theStory">
-
+ 
     </div>
     <!--Container for the buttons-->
     <div id="buttons">
-
+ 
     </div>
     
-
+ 
     
     
-
+ 
     <script>    
     //creates story
     
     
-
-
+ 
+ 
     let storyTracker=document.getElementById("theStory");
-
+ 
     let buttonTracker=document.getElementById("buttons");
     
     let pastStory=["start"];
-
+ 
     function createStory(text){
         let storyText=document.createElement("p");
         storyText.innerText=text;
         storyTracker.appendChild(storyText);
     }
     //Displays story on screen
-
+ 
     function displayMyStory(){
         let chunk=pastStory[pastStory.length -1];
         storyTracker.innerHTML="";
@@ -78,7 +84,7 @@
         }
     }
     //Shorthand buttonCreation
-
+ 
     function createButton(booto, choice){
         let button=document.createElement("button");
         button.innerHTML=booto;
@@ -89,12 +95,12 @@
         });
     }
     //Run everything on the page
-
+ 
                                         /*The actually story writing and choice options*/
-
+ 
     const story = {
         start : {
-            text : function(){ return "You’ve been hit by a truck, but somehow your soul transfer through the 10th dimension, into a baby’s body. Your name is " + usrName + ". This baby is abandoned and left at nowhere. In this world, people could use Charma to use magic, magic is divided into two categories, white magic, and elements magic. White magic is magic like teleport, buff strength, healing, etc. Elements magic are fire, water, earth, metal, wood. People will be born with either white magic or elements magic. Only a small percent of people will be born with two or more elements. You have archived main character arua and you were born with white magic."
+            text : function(){ return "You’ve been hit by a truck and you’ve been transported into a baby’s body in what seems to be another world. Your name is " + usrName + ". You’ve been abandoned and left in the middle of nowhere. In this world, people could use magic. Magic is divided into two categories, white magic, and elemental magic. White magic is magic like teleportation, strength, healing, etc. Elemental magics are fire, water, earth, metal, and wood. People will be born with either white magic or elemental magic at birth. Only a small percent of people will be born with two or more elements. You have appear to have been born with white magic."
 },
             choices:[
                 ["Adopted by monster","mons"],
@@ -103,16 +109,16 @@
             ]
         },
         mons:{
-            text : function(){return "You have been adopted by a monster, his name is Erzan, a nice monster. Every monster in the village seems to like you, they raise you well enough for you to know all about survival and hunting skills. As time go toward, you are 18. Today is your birthday, Erzan intends to ask you to go on a hunting trip with him."} ,
+            text : function(){return "You have been adopted by a monster named Erzan, he’s rather kind. Every monster in your village seems to like you. They raise you well and have taught you all sorts of survival & hunting skills. As time has gone on, you’ve turned 18.  In fact, today is your birthday! Erzan intends on asking you to go on a hunting trip with him."} ,
             choices:[
                 ["Go with Erzan","yesErzan"],
                 ["Ask Erzan to stay home and enjoy your birthday party.","noErzan"]
             ]
         },
         human:{
-            text : function(){return " \"Who putted this basket right here ?\", a woman\'s voice said." + "\n" +
-' "Wh-wh-what! A baby ? I always wonder why humans can be this cruel to abandon their child" ' + "sign, she picks up the basket and say," + ' "Lucky you little brat that I found you, I think we will have a good time together" ' + "\n"  +
-"You have been adopted by a woman named Elora, she is a witch, who wish to have a peaceful life among the humans. You spent 18 years with her, and today is your 18th birthday. You wonder how big is the world outside the village you live in."
+            text : function(){return " \"Who put this basket here?\", a woman\'s voice said." + "\n" +
+' "Wh-wh-what! A baby!? I always have wondered why humans could be this cruel and abandon their own child." ' + "Sighing, she picks up the basket and whispers," + ' "Lucky you, you little brat that I’m the one who found you. I think we will have a good time together." ' + "\n"  +
+"You have been adopted by a woman named Elora. She’s a witch, who wishes to have a peaceful life among the humans. You spent the majority of your life with her, and today is your 18th birthday! You wonder how big the world outside the village is."
 },
             choices:[
                 ["Ask Elora to move out and go on an adventure by yourself.","moveOut"],
@@ -120,54 +126,54 @@
             ]
         },
         God:{
-            text : function (){return "You see a guy’re holding a thunder in his hand, on the other hand you see him holding something round, water dropping down, but you still a baby, so you don’t have any question, and you will forget this soon." + "\n" + 
-"God says." + "\n" +
-"-Hm, so this tiny living creature is the result of crossed my forbid line? How fun it will be if I adopt this thing and raise him as my tool, this thing might be useful in the future." + "\n" +
-"You have been adopted by God, the ruler of the world. You live a wealthy life, with friends, family, and everyone loves you. God teaches you how to harness your hidden power. You could use 30% of that power. Don’t underestimate 30%, compared to God, your 30% is equal to 5% of God. Today is your 18th birthday, God asks you if you want to help Marco, a believer, to raid a monster’s village, and prevent the dangers could come to humans." 
+            text : function (){return "You see a guy there who’s holding a lightning bolt in his hand, on the other hand you see him holding something round which is dripping wet. You’re still a baby so you don’t have any questions, and you will forget this soon." + "\n" + 
+"God says," + "\n" +
+"-Hm, so this tiny living creature is the result of crossing my forbid line? How fun it would be if I adopted this thing and raised him as my tool. This little thing might be useful in the future." + "\n" +
+"You have been adopted by God, the ruler of the world. You live a wealthy life, with friends, family, and everyone who loves you. God teaches you how to harness your hidden power. You could use 30% of that power, don’t underestimate 30%. Compared to God, your 30% is equal to 5% of his. Today is your 18th birthday. God asks you if you want to help Marco, a believer, to raid a monster’s village and prevent the dangers that could come to humans." 
 },
             choices:[
                 ["You accept the quest and raid the village with Marco.","helpMarco"],
-                ["You have plan with your friends, so you don’t go with Marco.","whoCaresAboutMarco"]
+                ["You have plans with your friends, so you don’t go with Marco.","whoCaresAboutMarco"]
             ]
         },
         yesErzan: {
-            text : function (){return "You go hunting with Erzan, in the trip you meet Marco. A powerful knight who’s looking for his master as the family will. Coincidence, you are his master. Would you like to take him as your servant ? Remember, Marco has his own army, which can be helpful in the future."},
+            text : function (){return "You go hunting with Erzan, while on the trip you meet Marco. A powerful knight who’s looking for his master that his family shall serve. Coincidentally, you are his master. Would you like to take him as your servant? Marco has his own army, which can be helpful in the future."},
             choices :[
                 ["take Marco","getSlave"],
                 ["don’t take Marco.","lostSlave"]
             ]
         },
         noErzan:{
-            text : function (){return "Stay home with Erzan. Unfortunately, your monster village get raided by a human army, Marco is a leader. Because you are well loved in the village, all the monsters try to save you by sacrificing themselves. You escape, but you are the only one survive. Calm down your anger, you try to hide from the searching party, Marco dispatched to find you. You find a shelter, but there is an old man in it, reluctantly you stay with him. He starts a conversation with you, you try to ignore him, suddenly he mentions about your parents. He says that he knows who you parents are. You can’t trust him yet, so you ask more questions about your life, even your deepest secret. How suprise, he get all the answers right. You ask him about your parents, he says, \"Your parents were killed by God because they crossed the line that God forbid.\" You angry." 
+            text : function (){return "You've decided to stay home with Erzan. Unfortunately, your village gets raided by a human army. Marco is the leader of their army. Because you are well loved in the village, all the monsters try to save you by sacrificing themselves allowing you to escape, but  you are the only one who survives. You calm down your anger and you try to hide from the search party that Marco dispatched to find you. You find a shelter, but there’s an old man in it. You decide to stay with him. He starts a conversation with you, you try to ignore him at first until suddenly, he mentions your parents. He says that he knows who you parents are. You can’t trust him yet, so you ask more questions about your life, even your deepest secret, to gain his trust. To your surprise, he gets all the answers right. You ask him about your parents and he said, \"Your parents were killed by God because they crossed the line that he forbid.\" You’re furious." 
 },
             choices :[
-                ["Ask old man to be your trainer.","respect"],
-                ["Thanks for the information and leave.","notGood"]
+                ["Ask old man to be your trainer.","firstchallenge"],
+                ["Thanks for the information and leave.","findwaytodefeatGodurself"]
             ]
         },
         moveOut:{
-            text : function (){return "You move out, on your adventure, the only question that keeps going around in your head is why human and monster have such a barrier. You try to find the question. On your way, you meet an old man, he told you to go west and meet a guy named Zillian, he will give you the answer. You listen to him and go west. After 3 days of walking, you see a guy with a noble suit, at first you didn’t think he is Zillian, you ask" + "\n" + 
-"-Are you Zillian ?" + "\n" +
-"He says." + "\n" +
-"-I am, and you are ?" + "\n" +
-"-" + usrName +", I heard someone say that you can answer my question." + "\n" +
-"Zillian says" + "\n" +
-"-And your question is ?" + "\n" +
-"You say." + "\n" +
-"-Can humans and monsters live together ?" + "\n" + 
+            text : function (){return "You move out, on your adventure, the only question that keeps going around in your head is why human and monster have such a barrier. You try to find the question. On your way, you meet an old man. He told you to go west and meet a guy named Zillian. He will give you the answer you need. You listen to him and go west. After 3 days of walking, you see a guy in a noble’s suit, at first you didn’t think he was Zillian. You ask," + "\n" + 
+"-Are you Zillian?" + "\n" +
+"He says" + "\n" +
+"-I am, and you are?" + "\n" +
+"-" + usrName +", Someone told me that you can answer my question." + "\n" +
+"Zillian says," + "\n" +
+"-And your question is?" + "\n" +
+"You say," + "\n" +
+"-Can humans and monsters actually live together?" + "\n" + 
 "-They can, but not all monsters are the same." + "\n" +
-"You ask" + "\n" +
-"-What do you mean by that ?" + "\n" + 
-"-There is a long story behind this, would you want to know?" + "\n" + 
-"You say." + "\n" +
+"You ask," + "\n" +
+"-What do you mean by that?" + "\n" + 
+"-There is a long story behind this, would you want to know all of it?" + "\n" + 
+"You say," + "\n" +
 "-Yes" + "\n" +
-"-Once upon a time, a long time ago, monsters and humans are friends. But unfortunately the New God created another kind of monster, the evil one, this new kind attacks everything it sees without mercy, because the new kind looks like the old kind, so humans misunderstand that monsters try to take advantage over humans, little does god know humans still have faith in monsters, they wondered about the relation with monsters. Monsters and humans just need someone who is brave enough to stand out to reconcile their relationship." + "\n" +
+"-A long while ago, monsters and humans were friends. But unfortunately the New God created another kind of monster, the evil ones you hear stories about sometimes. This kind attacks everything it sees without mercy, because the new kind looks like the old kind, humans mistook them for the normal kind of monsters, and think they all will try to take advantage of humans. Little does god know, humans still have faith in monsters, they wondered about the relationship they might’ve had with monsters. Monsters and humans just need someone who is brave enough to stand out to reconcile their relationship." + "\n" +
 "-hm..." + "\n" + 
-"You hestiage for a moment and say." + "\n" + 
-"-I will be that guy, I want humans and monsters to be friends again. Zillian, I don’t know who you are but it would be nice if I have someone who knows a lot about this world like you next to. Would you like to help me fix this relationship ?" + "\n" +
-"-Yes. It’s my pleasure to help you." + "\n" + 
-"You get an achievement, first friend in the adventure. Zillian will be the strongest help if you need him." + "\n" + 
-"You and Zillian find way, make friends with everyone in your way. As far as you go, everyone loves you. On your way, you heard the rumor about the temple,that can make your wish come true." 
+"You hesitate for a moment and say," + "\n" + 
+"-I will be that guy, I want humans and monsters to be friends again. Zillian, I don’t know who you are but it would be amazing if I could have someone who knows a lot about this world like you next to me on this journey. Would you like to help me fix this relationship?" + "\n" +
+"-Yes. It’d be my pleasure to help you." + "\n" + 
+"You get an achievement. First friend in the adventure! Zillian will be the strongest to help if you need him." + "\n" + 
+"You and Zillian find ways to make friends with everyone in your way. As far as you go, everyone loves you. On your way, you hear the rumor about a temple that can make your wish come true." 
 }, 
             choices :[
                 ["Find more about this temple.","smart"],
@@ -175,182 +181,228 @@
             ]
         },
         learnMagic :{
-            text : function (){return "You stay home with Elora. Learn more about magic, as you learn, you realize how powerful your white magic is. You can cancel other magic if you can see its flaws fast enough. One day, you try to fix the flaws, accidentally, you make the magic gain stronger. The villagers know, they ask you if you can help them to protect them village. Around this time, don’t know why but the village seems to be the only target of the monster’s , a lot of people were killed and sacrificed themselves to kill as many monsters as they could. You feels that you need to do something in return for those years you lived in the village. You use your magic to fight against the raids, and teach villagers who you see they could do something. One day, the village's chief give you a mission which requires leaving the village for a month. Something seems odd."},
+            text : function (){return "You stay home with Elora and learn more about magic. As you learn, you realize how powerful your white magic is. You can cancel other magics if you can see its flaws fast enough. One day, you try to fix the flaws of your own magic, accidentally, you make the magic stronger. The villagers know, they ask you if you can help them to protect them village. Around this time, you don’t know why but the village seems to be the only target around, a lot of people were killed and sacrificed themselves to kill as many monsters as they could. You feel that you need to do something in return for those years you lived in the village. You use your magic to fight against the raids, and teach villagers who you see they could do something. One day, the village's chief gives you a mission which requires leaving the village for a month. Something seems off about this...."},
             choices :[
                 ["Take quest","Eloradies"],
                 ["Don't take quest","Eloralives"]
             ]
         },
         Eloradies:{
-            text : function (){return "You take the quest and head out to do your mission. When you come back, everyone say that Elora is gone, she said she needs to do something and it's emergency. You believe them. As time goes by, It'd been a year since Elora's gone. You accidetally hear the villagers say that they feel so good for killed Elora. You can't believe that you heard, you appear and ask them. They conf  "},
+            text : function (){return "You take the quest and head out to do your mission. When you come back, everyone says that Elora is gone, she said she needs to do something and it's an emergency. You believe them. Time goes by, it's been a year since Elora's gone missing. You accidentally hear the villagers say that they feel so good for killing Elora. You can't believe that you heard that, you appear and ask them. They confirm it and give the reasoning that she was a witch raising a demihuman."},
             choices :[
                 ["Kill villagers","becomeEvil"],
                 ["Leave the village","sad"]
             ]
-
+ 
         },
         becomeEvil:{
             text : function (){return "Find and learn about dark magic"},
             choices :[
-                ["Sacrifice yourself to revival Elora","end1"],
+                ["Sacrifice yourself to revive Elora","end1"],
                 ["Use dark magic to create chaos","makeHumanDisappearforever"]
             ]
-
+ 
         },
         makeHumanDisappearforever:{//end
-            text : function (){return "Create chaos, kill all humans, God tries to stop you but he failed, you kill God. Realize that Elora can't come back to live. You live in the jungle and avoid everyone and everything till you die alone." + "\n" +  "\n" + "Thank you for staying with us over the story."},
-            
+            text : function (){return "Create chaos, kill all humans, God tries to stop you but he fails resulting in you killing God. You realize that Elora can't come back to life. You decide to live in the jungle and avoid everyone and everything till you die alone." + "\n" +  "\n" + "Thank you for staying with us over the story."},
+            choices : []
         },
         end1:{ //end
-            text : function (){return "Elora comes back to life, she finds out that you sacrifice yourself to save her. She cries." + "\n" +  "\n" + "Thank you for staying with us over the story."}
+            text : function (){return "Elora comes back to life, she finds out that you sacrificed yourself to save her. She cries." + "\n" +  "\n" + "Thank you for staying with us over the story."},
+        
+            choices : [] 
         },
-
+ 
         sad:{
-            text : function (){return "Heard about the temple that can make your wish come true"},
+            text : function (){return "You hear about a temple that can make your wish come true"},
             choices :[
                 ["Find more about this temple","smart2"],
-                ["Go straight to the temple.","stupid2"]
+                ["Go straight to the temple","stupid"]
             ]
-
+ 
         },
         smart2:{
-            text : function (){return "Find out that there are traps, posions, and danger factors in this temple."},
+            text : function (){return "Find out that there are traps, poisons, and various dangers in this temple."},
             choices :[
                 ["Get ready","youlive"],
                 ["Don't get ready","youdie"]
             ]
         },
         youlive:{
-            text : function (){return "You avoid all the dangers in your way, get into the deepest part of the temple. Your wish is "},
+            text : function (){return "You avoid all the dangers in your way and get into the deepest part of the temple. Your wish is... "},
             choices :[
                 ["Elora can come back to live.","happyEnd"],
-                ["Mcdonald happy meal","dumb"]
+                ["Mcdonald’s happy meal","dumb"]
             ]
         },
         dumb:{ //end
-            text : function (){return "Because your wish is stupid, you die." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story."},
+            text : function (){return "Maybe you could’ve picked something a little..better.." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story."},
             
+        
+            choices : []
         },
         happyEnd:{ //end
-            text : function (){return "Elora comes back to live. She sees you, she knows you tried so hard to bring her back to life. You live happily ever after." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story."},
+            text : function (){return "Elora comes back to life. She sees you, she knows you tried so hard to bring her back to life. You live happily ever after together." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story."},
+            choices : [] 
         },
         Eloralives:{
-            text : function (){return "Find out about the villages's plan. They try to get you this quest, so Elora will be home alone, they will kil her."},
+            text : function (){return "Find out about the village's plan. They try to get you this quest, so Elora will be home alone. They’ll kill her then."},
             choices :[
                 ["Angry, but still remember about 18 years live in the village. Leave the village","gowithElora"],
-                ["Angry, pretend to left.","burnthevillage"]
+                ["Angry, pretend to leave.","burnthevillage"]
             ]
         },
         burnthevillage:{ //end
-            text : function (){return "You go back, set the village on fire. Feel happy about it, curious and take a bite of one burned human's meat. Feel good, kill more human and eat them, cooked. Become a myth to scared the butt out of the kids." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story." },
+            text : function (){return "You go back and set the village on fire. You feel happy about this. Curious, you take a bite of one of the burned human's meat. It's good, you decide to kill more humans and eat them as well. You become a myth and scare the hell out of those told about you." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story." },
             
+        
+            choices : []
         },
         gowithElora:{ //end 
-            text : function (){return "You grow old with Elora, find a wife, have friends, a new place where everyone accept a witch and a half human half monster like you. Live happily ever after" + "\n" + "The End" + "\n" + "Thank you for tsaying with us over the story."},
+            text : function (){return "You grow old with Elora, find a wife, gain friends, and a new place where everyone accepts a witch and a half human half monster like you. You live happily ever after" + "\n" + "The End" + "\n" + "Thank you for staying with us over the story."},
+        
+            choices : []
         },
         helpMarco :{
-            text : function (){return "Help Marco to raid the monster village, feel good about killing monsters."},
+            text : function (){return "Help Marco to raid the monster village, after the raid, you realize you have a passion for killing, but you can't just kill humans since they’re God’s favorite toy. But monsters aren’t...."},
             choices :[
                 ["Ask Marco to join more raids","deathEnd"],
-                ["Go by yourself, kill more monsters, become monster hunter.","deathEnd"]
+                ["Go by yourself,become a monster hunter.","deathEnd"]
             ]
         },
         deathEnd:{ //end
-            text : function (){return "Once time when you rush in a monster cave without premission, the monster outnumbered you, they kill you and eat you like a delicious desert." + "\n" + "The End" + "\n" + "Thank you for staying with us over the story." },
+            text : function (){return "Once time when you rush in a monster cave without permission, the monsters outnumbered you, they end up killing you and eat you like you’re a delicious dessert. " + "\n" +
+ 
+            "The End." +"\n" + 
+ 
+            "Thank you for staying with us over the story." },
+            choices : []
             
         },
         whoCaresAboutMarco:{
-            text : function (){return "You don't wanna work, you feel like going out. An old man sits under a tree"},
+            text : function (){return "You don't want to work, you feel like going out. When you walk outside, you see an old man is sitting under a tree, he looks suspicious."},
             choices :[
-                ["Start a converstation with him","knowTheFuture"],
+                ["Start a conversation with him","knowTheFuture"],
                 ["Ignore him","WontGetInformation"]
             ]
         },
         WontGetInformation:{
-            text : function (){return "When you walk away, he says one thing that you can't ignore him anymore. You ask if what old man said is real. He swears under his name that he'd never lie, you ask more questions to testify if he really know everything. Turn out his words are legit. You can't believe that God killed your parents and adopted you just liuke nothing happened, you furious and feel betrayed and you don't like it, all you have in your mind right now is how to kill God. "},
+            text : function (){return "When you walk away, he says one thing that you can't ignore. You ask if what the old man said is real. He swears under his name that he'd never lie, you ask more questions to testify if he really knows everything. Turns out his words are legitimate. You can't believe that God killed your parents and adopted you just like nothing happened, you’re furious and feel betrayed. You don't like it, all you have in your mind right now is how to kill God."},
             choices :[
-                ["Ask him to be your trainner","firstchallenge"],
-                ["Thanks for the information and leave." , "findwaytodefeatGodurself"]
+                ["Ask him to be your trainer","firstchallenge"],
+                ["Thank him and leave." , "findwaytodefeatGodurself"]
             ] 
         },
+        firstchallenge:{
+            text : function (){return "You feel like it's fate for you to meet this old man, you have discovered your true past. You ask him if he can train you till you are strong enough to defeat God. During this time, God's busy with reading for the raid, he doesn't know anything about the old man and you. The old man never told you his name. When you ask him, he says it’s fine, just call him old man. The old man asks you to choose between being trained the hard way or the easy way."},
+            choices :[
+                ["Hard way","faster"],
+                ["Easy way","coward"]
+            ]
+        },
+	  faster:{
+text : function (){return "You choose the hard way, this way is harder after all, but you will have more percent to defeat God. You have been trained by the old man for 3 years. During this, you barely remember how many times you almost died. The old man trained you to become stronger than any of God's soldiers. You feel sure about the fight."},
+            choices :[
+                ["Challenge God.","killGodandlostAnArm"],
+                ["Assassinate God.","killGodWithoutLosingAnything"]
+            ]
+  },
+   killGodandlostAnArm:{ //end
+text : function (){return "You feel that this is the time when you could defeat God easily, God doesn’t know what will happen to him, and accepts the challenge. You and God fight three days and three nights, the fourth day God stops and asks if you are tired. You say you are fine. At this time, you use your sword and cut a deep cut in his throat. But you miss. He dodges and uses his thunder to cut at your hand. You lost an arm. Now you’ve become enraged. You tell him that you know the truth. You know that he killed your parents. God’s still stunned, you see a chance and swing your sword through God’s body. God can’t believe you didn’t even hesitate to kill him. Before God dies, he says he is proud of you and hope you can move on and be in charge of heaven in his place. You accept because of those years he raises you and those memories between you and him. You feel relieved from the death of God and become the head of heaven. You try to destroy the barrier God made between humans and monsters. " + "\n" +
+ 
+"The End." 
+ 
+"Thank you for staying with us till the end."},
+choices : []
+},
+  killGodWithoutLosingAnything:{text : function (){return "Even though you have been trained for three years by the old man, you still feel insecure about defeating God. You think with your power and your magic right now, it is enough to assassinate him. You make a plan, talk with the old man about this. He helps you and finish the plan. You follow the plan with the old man help. You succeed and kill God. Then disappear in the dark. The Angel guardians know that you assasinated God and wanted you. But they never knew that you found a tunnel leading to Hell and went there. You live in Hell for the rest of your life with the old man. You feel like he has some connection with you but just can’t think about it." + "\n" +  
+ 
+"The End. "
+ 
+"Thank you for staying with us till the end. "},
+choices : []
+},
+ 
+        coward:{ //end
+text : function (){return " You choose an easy way, with this way you can defeat God but the percent is smaller than if you took the hard way. You accept that you’ll have this small percent. You think that no matter what, although you might die, you don’t really care, the only thing on your mind is killing God to avenge your father and mother. As you thought, when you challenge God, he accepted with the doubt that you could kill him, but he’s wrong. You kill him with your blast magic. Using an explosion spell to blow up your body in order to kill God. You die, but with the relief that you can take God down with you."},
+choices : [] 
+        },
+
+ 
         findwaytodefeatGodurself:{
-            text : function (){return "You feel like it's fate  "},
+            text : function (){return " After the information you get from the old man, you feel like it’s your mission to defeat God and avenge your parents. You go back home and get ready to tell God that you want to be trained for the next raid, but what you actually mean is you want to be trained to kill him. God agrees and gives you luggage you need for the trip. You go into the deepest part of an extremely dangerous forest. Go to the deepest part of the ocean, after 5 years trained you now become the become strongest human alive ever. But you’re still just a half human, half monster. You challenge God, but your power isn’t enough to kill him. Instead God knows you’re intent, he kills you on the spot. You really try, but it’s not enough, sometimes you need other help to accomplish your quest. "+ "\n" + 
+ 
+"The End." 
+"Thank you for staying with us till the end."},
+choices : []
+            },
+               knowTheFuture:{
+            text : function (){return "When you talk with him, you discover that whatever this old man says is all the truth, you being curious, ask him about God. The old man says that God isn’t your real parent, but actually,God is the one who killed your parents and had adopted you so when you grow up you will become his shield and do the dirty work for him."},
             choices :[
-                ["Do whatever it takes to get power","powerUp"],
-                [""]
-            ]
+                ["Ask him to be your trainer","firstchallenge"],
+                ["Thank him for the information and leave." , "findwaytodefeatGodurself"]
+            ] 
+ 
         },
-        powerUp:{
-            text : function (){return ""},
+  youdie:{
+text : function (){return "You didn’t get ready for the trip. unfortunately you get shot by arrows and die." + "\n" + 
+ 
+"The End."
+ 
+"Should always make sure you’re ready before going somewhere dangerous."},
+  
+choices : []
+    },      
+ 
+    smart:{
+            text : function (){return "Find out that there are traps, poisons, and various dangers in this temple."},
             choices :[
-                [""],
-                [""]
+                ["Get ready","youlive"],
+                ["Don't get ready","youdie"]
             ]
-        },
-        knowTheFuture:{
-            text : function (){return ""},
-            choices :[
-                [""],
-                [""]
-            ]
-        },
-        smart:{
-            text : function (){return ""},
-            choices :[
-                [""],
-                [""]
-            ]
-        },
-        stupid:{
-            text : function (){return ""},
-            choices :[
-                [""],
-                [""]
-            ]
-        },
-        notGood:{
-            text : function (){return ""},
-            choices :[
-                ["",""],
-                ["",""]
-            ]
-        },
-        respect:{
-            text : function (){return ""},
-            choices :[
-                ["",""],
-                ["",""]
-            ]
-        },
-        getSlave:{
+},
+          Stupid:{ //end
+            text : function (){return "You go straight to the temple without any information, you get poisoned and die." 
+ 
+},
+choices : []
+          },
+              getSlave:{
             text : function (){return "You accept Marco as a servant, but you still not trust him yet. All of the sudden, he asks if you know about the temple that makes your wish come true."},
             choices :[
-                ["Go to the temple",""],
-                ["Don't go",""]
+                ["Go to the temple","knowtruepast"],
+                ["Don't go","becomeAnAdventurer"]
             ]
-
+ 
         },
+	knowtruepast:{ //end
+text : function (){return "You agree to go to the temple, you invest about this temple, you find a safe way to get in. When you get in you and your team help each other survive through the crisis. When you make it to the end, you wish to have the power to protect the ones you love." + "\n" +
+ 
+"The End." 
+ 
+  },
+  choices : []
+            },
         lostSlave:{
-            text : function (){return ""},
+            text : function (){return "Marco ask you to fight with him, if you can defeat him, he will let you go, otherwise he will become your servant. Because Marco is a well trained you lost to him. You are a man of your word. You accept Marco as a servant, but you still not trust him yet. All of the sudden, he asks if you know about the temple that makes your wish come true. "},
             choices :[
-                ["",""],
-                ["",""]
+                ["Go to the temple","knowtruepast"],
+                ["Don’t go to the temple","becomeAnAdventurer"]
             ]
         },
-
-        
-        
-
-
-        
-
-        
-    }   
+    becomeAnAdventurer:{ //end
+        text : function (){return "You don’t want to go to the temple, but you have an idea, since Marco has an army now you can use that army to protect unit and protect the village from the human’s raid. You succeed with that idea. The village become undefeated and last for eternity. " + "\n" +
+ 
+        "The End." 
+    },
+        choices : []
+ 
+    }
+}
+          
 </script>
-
-
+ 
+ 
 </body>
 </html>
-
-
-
+ 
